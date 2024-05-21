@@ -12,9 +12,7 @@ plt.figure(figsize=(10, 8))
 def custom_fmt(x):
     if x == 0:
         return '0'
-    # Format the number to two decimal places
     formatted = "{:.2f}".format(x)
-    # Remove the leading zero for positive numbers, handle negative numbers separately
     return formatted.lstrip('0').replace('-0', '-') if '0' in formatted else formatted
 sns.heatmap(spearman_corr, mask=mask, annot=True, cmap='coolwarm', fmt="",
             annot_kws={'size': 10, 'ha': 'center', 'va': 'center'},
